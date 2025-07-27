@@ -1,0 +1,64 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "modules-left": ["wlr/workspaces", "hyprland/window"],
+  "modules-center": ["clock", "custom/cpu_temp"],
+  "modules-right": ["cpu", "memory", "battery", "network", "tray"],
+
+  "clock": {
+  	"format": "{:%a %d %b - %I:%M %p}",
+  	"tooltip-format": "{:%A %d %B %Y - %I:%M:%S %p}"
+  },
+
+  "cpu": {
+	"interval": 5,
+  	"format": "{usage}%   - {avg_frequency:.2f}GHz"
+  },
+
+  "custom/cpu_temp": {
+  	"interval": 5,
+  	"format": "{}",
+  	"exec": "echo \"CPU: $(sensors | awk '/Tctl:/ {print $2}' | tr -d '+')  |  GPU: $(sensors | awk '/edge:/ {print $2}' | tr -d '+')\""	
+  },
+
+  "memory": {
+    "format": "RAM: {used:0.1f}GiB"
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": "⚡ {capacity}%",
+    "format-plugged": "🔌 {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "on-click": "powerprofilesctl set power-saver",
+    "on-scroll-up": "powerprofilesctl set performance",
+    "on-scroll-down": "powerprofilesctl set balanced"
+  },
+
+  "network": {
+    "interface": "wlan0", // oppure "wlan0" o "eth0" se vuoi forzare
+    "format": "{ifname} ↓{bandwidthDownBytes} ↑{bandwidthUpBytes}",
+    "interval": 2,
+    "format-wifi": "📶 {essid} ↓{bandwidthDownBytes} ↑{bandwidthUpBytes}",
+    "format-ethernet": "🔌 {ifname} ↓{bandwidthDownBytes} ↑{bandwidthUpBytes}",
+    "format-disconnected": "Disconnected"
+  },
+
+  "wlr/workspaces": {
+    "format": "{name}",
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace +1"
+  },
+
+  "hyprland/window": {
+    "format": "{title}"
+  },
+
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10
+  }
+}
+

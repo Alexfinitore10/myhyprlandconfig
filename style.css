@@ -1,0 +1,134 @@
+/* Base */
+* {
+  border: none;
+  border-radius: 10px;
+  font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", sans-serif;
+  font-size: 13px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Bar intera */
+window#waybar {
+  background: rgba(20, 20, 20, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Moduli generali */
+#clock,
+#cpu,
+#memory,
+#battery,
+#network,
+#tray,
+#workspaces,
+#window {
+  padding: 0 12px;
+  margin: 4px 6px;
+  font-weight: 500;
+}
+
+/* Clock al centro */
+#clock {
+  background: linear-gradient(135deg, #8e44ad, #9b59b6);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* CPU */
+#cpu {
+  background: linear-gradient(135deg, #e67e22, #d35400);
+}
+
+/* Temperatures */
+#custom-cpu_temp {
+	color : #98c379;
+	font-weight: bold;
+	background: linear-gradient(135deg, #1f1f1f, #2d2d2d);
+	padding: 4px 10px;
+	font-size: 13px;
+	border-radius: 8px;
+	font-family: "JetBrains Mono", monospace;
+}
+
+/* RAM */
+#memory {
+  background: linear-gradient(135deg, #2980b9, #3498db);
+}
+
+/* Battery */
+#battery {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+}
+
+#battery.charging {
+  background: linear-gradient(135deg, #00ff88, #00cc66);
+  color: #000000;
+}
+
+#battery.warning {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+#battery.critical {
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+}
+
+/* Network */
+#network {
+  background: linear-gradient(135deg, #16a085, #1abc9c);
+}
+
+/* Tray */
+#tray {
+  background: rgba(60, 60, 60, 0.6);
+  padding-right: 10px;
+}
+
+/* Workspaces */
+#workspaces {
+  background: transparent;
+}
+
+#workspaces button {
+  padding: 4px 10px;
+  margin: 2px 4px;
+  border-radius: 6px;
+  background: rgba(100, 100, 100, 0.3);
+  color: #cccccc;
+  font-weight: normal;
+}
+
+#workspaces button.focused {
+  background: #3498db;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#workspaces button.urgent {
+  background: #e74c3c;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Finestra attiva */
+#window {
+  color: #aaaaaa;
+  background: rgba(80, 80, 80, 0.4);
+  font-style: italic;
+  padding-left: 15px;
+}
+
+/* Tooltip */
+tooltip {
+  background: #222222;
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  border: 1px solid #444;
+}
+
